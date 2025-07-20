@@ -9,6 +9,52 @@ Description: A command-line cyber security tool for network monitoring, scanning
 
 import os
 import sys
+
+import sys
+
+def check_import(package, import_name=None):
+    import_name = import_name or package
+    try:
+        __import__(import_name)
+    except ImportError:
+        print(f"Dependency missing: '{package}'. Please install it manually and rerun.")
+        sys.exit(1)
+
+# Your external packages (package_name, import_name)
+dependencies = [
+    ('requests', 'requests'),
+    ('scapy', 'scapy.all'),
+    ('dnspython', 'dns.resolver'),
+    ('psutil', 'psutil'),
+    ('netifaces', 'netifaces'),
+]
+
+for pkg, imp in dependencies:
+    check_import(pkg, imp)
+
+# Now your usual imports can proceed, assuming all good:
+import os
+import time
+import socket
+import threading
+import argparse
+import json
+import platform
+import select
+import random
+import struct
+import binascii
+from datetime import datetime
+from collections import defaultdict
+
+import requests
+import scapy.all as scapy
+import dns.resolver
+import psutil
+import netifaces
+# etc...
+
+
 import time
 import socket
 import threading
@@ -19,6 +65,9 @@ import platform
 import select
 import random
 import struct
+import subprocess
+import sys
+import shutil
 import binascii
 from datetime import datetime
 from collections import defaultdict
