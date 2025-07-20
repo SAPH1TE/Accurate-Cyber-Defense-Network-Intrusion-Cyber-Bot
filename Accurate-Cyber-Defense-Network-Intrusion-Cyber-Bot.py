@@ -8,37 +8,7 @@ Description: A command-line cyber security tool for network monitoring, scanning
 """
 
 import os
-import sys
-import socket
-import threading
-import argparse
-import json
 import platform
-import select
-import random
-import struct
-import binascii
-import time
-import subprocess
-import shutil
-from datetime import datetime
-from collections import defaultdict
-import requests
-import scapy.all as scapy
-import dns.resolver
-import psutil
-import netifaces
-
-from scapy.layers import http
-from scapy.layers.inet import IP, TCP, UDP, ICMP
-from scapy.sendrecv import sniff, send, sr1, srp
-from scapy.layers.l2 import ARP, Ether
-from scapy.layers.dns import DNS, DNSQR, DNSRR
-from scapy.packet import Raw
-from scapy.arch import get_if_hwaddr
-from scapy.route import Route
-
-from cyberbot import CyberBot
 
 # Configuration
 CONFIG_FILE = "cyberbot_config.json"
@@ -85,6 +55,8 @@ dependencies = [
 for pkg, imp in dependencies:
     check_import(pkg, imp)
 
+from cyberbot import CyberBot
+
 if __name__ == "__main__":
     # Check for root privileges on Linux
     if platform.system() != "Windows" and os.geteuid() != 0:
@@ -94,3 +66,4 @@ if __name__ == "__main__":
     # Initialize and run the bot
     bot = CyberBot()
     bot.run()
+
