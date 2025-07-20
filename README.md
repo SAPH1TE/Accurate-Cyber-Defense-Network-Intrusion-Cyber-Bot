@@ -1,4 +1,4 @@
-# THIS IS HIGHLY UNSTABLE AND THIS FORK IS WITHIN DEVELOPMENT DO NOT EXPECT THINGS TO WORK
+# THIS IS HIGHLY UNSTABLE AND THIS FORK IS WITHIN DEVELOPMENT DO NOT EXPECT THINGS TO WORK AS THERE ARE MANY ISSUES WITHIN THIS IT IS ADVISED THAT YOU INSTEAD GO [HERE](https://github.com/Iankulani/Accurate-Cyber-Defense-Network-Intrusion-Cyber-Bot)
 # Accurate-Cyber-Defense-Network-Intrusion-Cyber-Bot
 Accurate-Cyber-Defense-Network-Intrusion-Cyber-Bot (ACDNIC-Bot) is an advanced, lightweight, and intelligent cybersecurity tool designed to monitor, detect, and report suspicious network activities in real time. 
 
