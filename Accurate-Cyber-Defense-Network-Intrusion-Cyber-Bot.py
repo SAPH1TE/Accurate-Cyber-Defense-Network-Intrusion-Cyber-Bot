@@ -38,16 +38,7 @@ import netifaces
 
 # Configuration
 CONFIG_FILE = "cyberbot_config.json"
-DEFAULT_CONFIG = {
-    "telegram_token": "",
-    "telegram_chat_id": "",
-    "monitoring_interval": 60,
-    "packet_sniff_count": 100,
-    "ddos_threads": 10,
-    "ddos_duration": 30,
-    "spoof_packet_count": 100,
-    "theme": "blue"
-}
+DEFAULT_CONFIG = "DEFAULT_CONFIG.json"
 
 # ANSI Color Codes for Blue Theme
 COLORS = {
