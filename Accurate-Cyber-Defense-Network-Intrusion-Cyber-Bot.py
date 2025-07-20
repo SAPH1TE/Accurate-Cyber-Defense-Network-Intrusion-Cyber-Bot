@@ -9,32 +9,6 @@ Description: A command-line cyber security tool for network monitoring, scanning
 
 import os
 import sys
-
-import sys
-
-def check_import(package, import_name=None):
-    import_name = import_name or package
-    try:
-        __import__(import_name)
-    except ImportError:
-        print(f"Dependency missing: '{package}'. Please install it manually and rerun.")
-        sys.exit(1)
-
-# Your external packages (package_name, import_name)
-dependencies = [
-    ('requests', 'requests'),
-    ('scapy', 'scapy.all'),
-    ('dnspython', 'dns.resolver'),
-    ('psutil', 'psutil'),
-    ('netifaces', 'netifaces'),
-]
-
-for pkg, imp in dependencies:
-    check_import(pkg, imp)
-
-# Now your usual imports can proceed, assuming all good:
-import os
-import time
 import socket
 import threading
 import argparse
@@ -44,35 +18,17 @@ import select
 import random
 import struct
 import binascii
+import time
+import subprocess
+import shutil
 from datetime import datetime
 from collections import defaultdict
-
 import requests
 import scapy.all as scapy
 import dns.resolver
 import psutil
 import netifaces
-# etc...
 
-
-import time
-import socket
-import threading
-import subprocess
-import argparse
-import json
-import platform
-import select
-import random
-import struct
-import subprocess
-import sys
-import shutil
-import binascii
-from datetime import datetime
-from collections import defaultdict
-import requests
-import scapy.all as scapy
 from scapy.layers import http
 from scapy.layers.inet import IP, TCP, UDP, ICMP
 from scapy.sendrecv import sniff, send, sr1, srp
@@ -81,9 +37,8 @@ from scapy.layers.dns import DNS, DNSQR, DNSRR
 from scapy.packet import Raw
 from scapy.arch import get_if_hwaddr
 from scapy.route import Route
-import dns.resolver
-import psutil
-import netifaces
+
+from cyberbot import CyberBot
 
 # Configuration
 CONFIG_FILE = "cyberbot_config.json"
@@ -110,7 +65,25 @@ packet_sniffer_thread = None
 ddos_attack_active = False
 ddos_threads = []
 
-from cyberbot import CyberBot
+def check_import(package, import_name=None):
+    import_name = import_name or package
+    try:
+        __import__(import_name)
+    except ImportError:
+        print(f"Dependency missing: '{package}'. Please install it manually and rerun.")
+        sys.exit(1)
+
+# Your external packages (package_name, import_name)
+dependencies = [
+    ('requests', 'requests'),
+    ('scapy', 'scapy.all'),
+    ('dnspython', 'dns.resolver'),
+    ('psutil', 'psutil'),
+    ('netifaces', 'netifaces'),
+]
+
+for pkg, imp in dependencies:
+    check_import(pkg, imp)
 
 if __name__ == "__main__":
     # Check for root privileges on Linux
