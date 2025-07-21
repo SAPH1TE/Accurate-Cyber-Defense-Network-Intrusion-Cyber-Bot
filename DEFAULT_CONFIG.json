@@ -1,0 +1,9 @@
+{
+  "telegram_token": "",
+  "telegram_chat_id": "",
+  "monitoring_interval": 60,
+  "ddos_threads": 10,
+  "ddos_duration": 30,
+  "packet_sniff_count": 50,
+  "spoof_packet_count": 100
+}
