@@ -19,8 +19,6 @@ import threading
 
 
 # Configuration
-CONFIG_FILE = "cyberbot_config.json"
-DEFAULT_CONFIG = "DEFAULT_CONFIG.json"
 COLORS = "colors.json"
 current_theme = "blue"
 
